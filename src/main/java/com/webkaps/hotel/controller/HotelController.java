@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/hotel-service")
+@RequestMapping("/hotel-api")
 public class HotelController {
 
     @Autowired
@@ -34,5 +34,11 @@ public class HotelController {
     public  ResponseEntity<Hotel>  getHotelById(@PathVariable String hotelId){
         Hotel hotel = hotelService.getHotelById(hotelId);
         return ResponseEntity.ok(hotel);
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Hotel>> getRatingByUserId(@PathVariable String userId){
+        List<Hotel> hotelByUserId = hotelService.getHotelByUserId(userId);
+        return ResponseEntity.ok(hotelByUserId);
     }
 }

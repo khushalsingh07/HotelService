@@ -13,11 +13,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "hotel_service")
+@Table(name = "hotel_detail")
 public class Hotel {
     @Id
     private String hotelId;
     private String name;
     private String location;
     private String about;
+    private String userId;
 }
